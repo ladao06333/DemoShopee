@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- <link rel="stylesheet" href="./assets/css/reset.css"> -->
+    <!-- <link rel="stylesheet" href="/assets/css/reset.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/base.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/grid.css">
+    <link rel="stylesheet" href="/assets/css/reponsive.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="/assets/font/fontawesome-free/css/all.min.css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -18,19 +20,19 @@
     <!-- Block Element Modifier -->
     <div class="app">
         <header class="header">
-            <div class="grid">
-                <nav class="header__navbar">
+            <div class="grid wide">
+                <nav class="header__navbar hide-on-mobile-tablet">
                     <ul class="header__navbar-list">
                         <li class="header__navbar-item header__navbar-item--has-qr header__navbar-item--separate">Vào
                             của hàng trên ứng dụng
                             <div class="header__qr">
-                                <img src="./assets/img/qr_code.png" alt="QR Code" class="header__qr-img">
+                                <img src="/assets/img/qr_code.png" alt="QR Code" class="header__qr-img">
                                 <div class="header__qr-app">
                                     <a href="" class="header__qr-link">
-                                        <img src="./assets/img/gg_play.png" alt="" class="header__qr-download-img">
+                                        <img src="/assets/img/gg_play.png" alt="" class="header__qr-download-img">
                                     </a>
                                     <a href="" class="header__qr-link">
-                                        <img src="./assets/img/appstore.png" alt="" class="header__qr-download-img">
+                                        <img src="/assets/img/appstore.png" alt="" class="header__qr-download-img">
                                     </a>
                                 </div>
                             </div>
@@ -106,7 +108,7 @@
                             ký</li>
                         <li class="header__navbar-item header__navbar-item--strong">Đăng nhập</li> -->
                         <li class="header__navbar-item header__navbar-user">
-                            <img src="./assets/img/anh.jpg" alt="" class="header__navbar-user-img">
+                            <img src="/assets/img/anh.jpg" alt="" class="header__navbar-user-img">
                             <span class="header__navbar-user-name">Thanh Long</span>
 
                             <ul class="header__navbar-user-menu">
@@ -129,7 +131,11 @@
 
                 <!-- Header with search -->
                 <div class="header-with-search">
-                    <div class="header__logo">
+                    <label for="mobile-search-checkbox" class="header__mobile-search">
+                        <i class="header__mobile-search-icon fas fa-search"></i>
+                    </label>
+
+                    <div class="header__logo hide-on-tablet">
                         <a href="/" class="header__logo-link">
                             <svg class="header__logo-img" viewBox="0 0 192 65">
                                 <g fill-rule="evenodd">
@@ -140,6 +146,9 @@
                             </svg>
                         </a>
                     </div>
+
+                    <input type="checkbox" hidden id="mobile-search-checkbox" class="header__search-checkbox">   
+                    
                     <div class="header__search">
                         <div class="header__search-input-wrap">
                             <input type="text" class="header__search-input" placeholder="Nhập để tìm kiếm sản phẩm">
@@ -186,7 +195,7 @@
 
                             <!-- No cart: header__cart-list--no-cart -->
                             <div class="header__cart-list ">
-                                <img src="./assets/img/no_cart.png" alt="" class="header__cart-no-cart-img">
+                                <img src="/assets/img/no_cart.png" alt="" class="header__cart-no-cart-img">
                                 <span class="header__cart-list-no-cart-msg">Chưa có sản phẩm</span>
 
                                 <h4 class="heading__cart-heading">Sản phẩm đã thêm</h4>
@@ -265,12 +274,26 @@
                     </div>
                 </div>
             </div>
+            <ul class="header__sort-bar">
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Liên quan</a>
+                </li>
+                <li class="header__sort-item header__sort-item--active">
+                    <a href="" class="header__sort-link">Mới nhất</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Bán chạy</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Giá</a>
+                </li>
+            </ul>
         </header>
 
         <div class="app__container">
-            <div class="grid">
-                <div class="grid__row app__content">
-                    <div class="grid__column-2">
+            <div class="grid wide">
+                <div class="row sm-gutter app__content">
+                    <div class="col l-2 m-0 c-0">
                         <nav class="category">
                             <h3 class="category__heading">
                                 <i class="category__heading-icon fas fa-list"></i>
@@ -295,8 +318,8 @@
                             </ul>
                         </nav>
                     </div>
-                    <div class="grid__column-10">
-                        <div class="home-filter">
+                    <div class="col l-10 m-12 c-12">
+                        <div class="home-filter hide-on-mobile-tablet">
                             <span class="home-filter__label">Sắp xếp theo</span>
                             <button class="home-filter__btn btn">Phổ biến</button>
                             <button class="home-filter__btn btn btn--primary">Mới nhất</button>
@@ -331,11 +354,43 @@
                             </div>
                         </div>
 
+                        <nav class="mobile-category show-on-mobile-tablet">
+                            <ul class="mobile-category__list">
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Thiết bị điện gia dụng</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Đồ dùng phòng bếp</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Mẹ & Bé</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Sức khỏe & Sắc đẹp</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Thời trang nữ</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Thời trang nam</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Đọc sách online</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                            </ul>
+                        </nav>
+
                         <!-- Home product -->
                         <div class="home-product">
-                            <div class="grid__row">
+                            <div class="row sm-gutter">
                                 <!-- Product item -->
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-item">
                                         <div class="home-product-item__img"
                                             style="background-image: url(https://img.abaha.vn/photos/resized/320x/83-1580888419-myphamohui-lgvina.png)">
@@ -375,7 +430,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-item">
                                         <div class="home-product-item__img"
                                             style="background-image: url(https://img.abaha.vn/photos/resized/320x/83-1586781803-myphamohui-lgvina.png)">
@@ -415,7 +470,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-item">
                                         <div class="home-product-item__img"
                                             style="background-image: url(https://img.abaha.vn/photos/resized/320x/83-1586336630-myphamohui-lgvina.png)">
@@ -455,7 +510,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-item">
                                         <div class="home-product-item__img"
                                             style="background-image: url(https://img.abaha.vn/photos/resized/320x/83-1576146597-myphamohui-lgvina.png)">
@@ -495,7 +550,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-item">
                                         <div class="home-product-item__img"
                                             style="background-image: url(https://img.abaha.vn/photos/resized/320x/83-1575812225-myphamohui-lgvina.png)">
@@ -534,7 +589,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-item">
                                         <div class="home-product-item__img"
                                             style="background-image: url(https://img.abaha.vn/photos/resized/320x/83-1575704558-myphamohui-lgvina.png)">
@@ -573,7 +628,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-item">
                                         <div class="home-product-item__img"
                                             style="background-image: url(https://img.abaha.vn/photos/resized/320x/73-1573463088-myohui.png)">
@@ -613,7 +668,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-item">
                                         <div class="home-product-item__img"
                                             style="background-image: url(https://img.abaha.vn/photos/resized/320x/83-1596776828-myphamohui-lgvina.png)">
@@ -653,7 +708,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-item">
                                         <div class="home-product-item__img"
                                             style="background-image: url(https://img.abaha.vn/photos/resized/320x/83-1576213241-myphamohui-lgvina.png)">
@@ -692,7 +747,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-item">
                                         <div class="home-product-item__img"
                                             style="background-image: url(https://img.abaha.vn/photos/resized/320x/73-1573189909-myohui.png)">
@@ -773,9 +828,9 @@
             </div>
         </div>
         <footer class="footer">
-            <div class="grid">
-                <div class="grid__row">
-                    <div class="grid__column-2-4">
+            <div class="grid wide footer__content">
+                <div class="row">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Chăm sóc khách hàng</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -789,7 +844,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Giới thiệu về chúng tôi</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -803,7 +858,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Danh mục</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -817,7 +872,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Theo dõi</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -840,13 +895,13 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-8 c-12">
                         <h3 class="footer__heading">Vào cửa hàng trên ứng dụng</h3>
                         <div class="footer__download">
-                            <img src="./assets/img/qr_code.png" alt="Download QR" class="footer__download-qr">
+                            <img src="/assets/img/qr_code.png" alt="Download QR" class="footer__download-qr">
                             <div class="footer__download-apps">
-                                <a href="" class="footer__download-apps-link"><img src="./assets/img/appstore.png" alt="App store" class="footer__download-apps-img"></a>
-                                <a href="" class="footer__download-apps-link"><img src="./assets/img/gg_play.png" alt="Google play" class="footer__download-apps-img"></a>
+                                <a href="" class="footer__download-apps-link"><img src="/assets/img/appstore.png" alt="App store" class="footer__download-apps-img"></a>
+                                <a href="" class="footer__download-apps-link"><img src="/assets/img/gg_play.png" alt="Google play" class="footer__download-apps-img"></a>
                             </div>
                         </div>
                     </div>
@@ -854,7 +909,7 @@
             </div>
 
             <div class="footer__bottom">
-                <div class="grid">
+                <div class="grid wide">
                     <p class="footer__text">© 2020 - Demo shopee </p>   
                 </div>
             </div>
